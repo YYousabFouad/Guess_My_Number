@@ -23,7 +23,9 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === secretNumber) {
     // if number is right
     message.textContent = '🎉 Congrats , You win! 🎉';
-    imoge.textContent = '✅';
+    imoge.textContent = `✅ `;
+    document.querySelector('body').style.background =
+      'linear-gradient(135deg, #0d9488, #115e59)';
   } else if (guess > secretNumber) {
     // if it false but higher
     message.textContent = '⚠️ Too High, Try again!';
@@ -39,4 +41,13 @@ document.querySelector('.check').addEventListener('click', function () {
     score.textContent = score.textContent - 1;
     checkingIfScoreIsZero(score);
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  document.querySelector('.score').textContent = 20;
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.imoge').textContent = '❓';
+  document.querySelector('.guess').value = '';
+  document.querySelector('body').style.background =
+    'linear-gradient(135deg,#1e293b,#0f172a)';
 });
