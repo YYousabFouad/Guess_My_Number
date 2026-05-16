@@ -8,7 +8,7 @@ const checkingIfScoreIsZero = score => {
   }
 };
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 console.log(secretNumber);
 
@@ -43,7 +43,9 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
+// before implementing the local storage
 document.querySelector('.again').addEventListener('click', function () {
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('.score').textContent = 20;
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.imoge').textContent = '❓';
